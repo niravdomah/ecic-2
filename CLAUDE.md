@@ -4,14 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Template repository** for building frontend applications with:
+**InvestInsight** - Investment risk analysis platform for managing monthly portfolio data import, validation, and multi-level approval workflows
 
-- Next.js 16 (App Router) + React 19 + TypeScript 5 (strict)
-- Tailwind CSS 4 + Shadcn UI (via MCP server)
-- Vitest + React Testing Library
-- Production-ready API client for OpenAPI-defined REST endpoints
+**Tech Stack:** Next.js 16 + React 19 + TypeScript 5 (strict) + Tailwind CSS 4 + Shadcn UI
 
-Users clone this template and use Claude Code to generate features, components, and API integrations.
+**Backend API:** Defined in `documentation/FileImporterAPIDefinition.yaml`, `documentation/MonthlyAPIDefinition.yaml`, and `documentation/DataMaintenanceAPIDefinition.yaml`. Connects to live REST API.
+
+**Planned Epics:**
+1. Start Page & Batch Management - Home page with batch creation and status display
+2. File Upload Infrastructure - Portfolio and other imports with file status matrices
+3. Data Confirmation System - Three-tab validation interface for data completeness
+4. Instruments & Index Prices Maintenance - CRUD screens for master data with audit trails
+5. Risk Data Maintenance - Durations, betas, and credit ratings management
+6. Report Comments & Multi-Level Approvals - Commentary system and three-level approval workflow
+7. Process Logs & Monitoring - File, workflow, and calculation logs for operational support
 
 ## Repository Structure
 
