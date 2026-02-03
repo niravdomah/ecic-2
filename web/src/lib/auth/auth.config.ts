@@ -61,28 +61,28 @@ const demoUsers = [
     id: '1',
     email: 'admin@example.com',
     name: 'Admin User',
-    password: '$2b$10$b882oiqk8H/FBz1KBsiV3u.IYwBju4cqPpgK0ByZu3dogUGSbg5tq', // Admin123!
+    password: '$2b$10$KeIrQDTJvrTbGsnJhVCNA.AUDy1wuVINdO1ZfVSo31ptnAfPMfbO2', // Admin123!
     role: UserRole.ADMIN,
   },
   {
     id: '2',
     email: 'power@example.com',
     name: 'Power User',
-    password: '$2b$10$ZM/O.bYFFUL.WHgaRpmjauHFMibQ4yM5joC3G4Le8vQmWrT6a7XAG', // Power123!
+    password: '$2b$10$daDqYt5RAezYKtDMfNnzBunyvs/W7FRhgVPjvq0SsdOiD1jYBKwZm', // Power123!
     role: UserRole.POWER_USER,
   },
   {
     id: '3',
     email: 'user@example.com',
     name: 'Standard User',
-    password: '$2b$10$OOR2fsBWLk8iAu98qaTYDOz34GTGvHu2IuwBM/uzTalU/bxJR2dGS', // User123!
+    password: '$2b$10$DG4whrMZU7fQm/oIMRom2u8BuyglJ0ZLWKDHN2p.jaAaxvub96E5m', // User123!
     role: UserRole.STANDARD_USER,
   },
   {
     id: '4',
     email: 'readonly@example.com',
     name: 'Read-Only User',
-    password: '$2b$10$gYQ.GBmAHC8e2wcG5ZJmOernK3DKT8R.lLOxacYsO2mwngc5PMOOi', // Reader123!
+    password: '$2b$10$7pcgpuizrAyyOcwbT37GruxwFsIg9NOuGcDzDUHjJm2SSCD70TxGy', // Reader123!
     role: UserRole.READ_ONLY,
   },
 ];
