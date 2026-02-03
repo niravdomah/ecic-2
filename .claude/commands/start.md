@@ -155,12 +155,25 @@ The ui-ux-designer will:
 4. Save to `generated-docs/wireframes/`
 5. Hand off to feature-planner
 
+**When transitioning from DESIGN to PLAN:** Before invoking feature-planner, run:
+```bash
+node .claude/scripts/check-api-specs.js
+```
+Include the API spec information in the handoff prompt to feature-planner.
+
 ## Option B: Start with Planning (Default)
 
 **First, initialize state for PLAN phase:**
 ```bash
 node .claude/scripts/transition-phase.js --init PLAN
 ```
+
+**Before invoking feature-planner, check for API specifications:**
+```bash
+node .claude/scripts/check-api-specs.js
+```
+
+This returns a JSON list of API spec files found in `documentation/`. You MUST include this information when handing off to the feature-planner so it doesn't assume "no API exists."
 
 Then use the **feature-planner** agent to begin processing feature specifications.
 

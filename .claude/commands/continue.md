@@ -73,13 +73,25 @@ This provides:
 
 **Note:** The `workflow-state.json` file is authoritative. The detection script provides supplementary information but should not override the state file.
 
-## Step 3: Resume with Appropriate Agent
+## Step 3: Check for API Specifications (PLAN phase only)
+
+**If resuming PLAN phase**, check for API spec files BEFORE invoking feature-planner:
+
+```bash
+node .claude/scripts/check-api-specs.js
+```
+
+This returns a JSON list of API spec files found in `documentation/`. Include this information when handing off to the feature-planner.
+
+**Why:** Prevents the planner from assuming "no API exists" and creating stories with placeholder/mocked endpoints.
+
+## Step 4: Resume with Appropriate Agent
 
 Based on `workflow-state.json`, determine the agent and context:
 
 | Phase | Agent | Context to Provide |
 |-------|-------|-------------------|
-| PLAN | `feature-planner` | Spec path |
+| PLAN | `feature-planner` | Spec path, **API specs found (see Step 3)** |
 | DESIGN | `ui-ux-designer` | Spec path, epic overview |
 | REALIGN | `feature-planner` | Epic number, discovered-impacts.md path |
 | SPECIFY | `test-generator` | Epic number, story files path |

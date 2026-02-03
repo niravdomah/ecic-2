@@ -111,6 +111,27 @@ Report actual exit codes truthfully. Never rationalize failures as "expected" or
 
 `npm run test:quality` must always pass. Anti-patterns in test files (even skipped tests) will fail CI/CD. In TDD, failing tests create expected TypeScript errors, but this still counts as a failed quality gate until implementation is complete.
 
+### 7. API Specifications Are Mandatory References
+
+**Before creating stories, planning features, or making assumptions about APIs:**
+
+1. **ALWAYS check `documentation/` for API spec files first** (`.yaml`, `.json`, `.yml`)
+2. Run: `node .claude/scripts/check-api-specs.js` OR manually list files: `ls documentation/*.{yaml,yml,json}`
+3. If API specs exist, they are the **source of truth** for:
+   - All endpoint paths and HTTP methods
+   - Request/response TypeScript types
+   - Query parameters and request bodies
+   - Error response shapes
+4. Document which spec file defines each endpoint in story files
+5. **Only use "mocked data" or "placeholder endpoints" if NO spec files exist after checking**
+
+**Never assume an API doesn't exist without checking the documentation/ directory first.**
+
+This project has API specs at:
+- `documentation/FileImporterAPIDefinition.yaml`
+- `documentation/MonthlyAPIDefinition.yaml`
+- `documentation/DataMaintenanceAPIDefinition.yaml`
+
 ## Testing Strategy
 
 ### Focus on Integration Tests
